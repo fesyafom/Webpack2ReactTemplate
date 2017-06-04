@@ -31,6 +31,13 @@ const config = {
                   use: ["css-loader", "sass-loader"],
                   publicPath: "/public"
               }) : ["style-loader", "css-loader", "sass-loader"]
+          },
+          {
+              test: /\.(jpe?g|png|gif|svg)$/,
+              use: [
+                  "file-loader?name=images/[hash:6].[ext]",
+                  "image-webpack-loader"
+              ]
           }
       ]
     },
